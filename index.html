@@ -1,0 +1,1401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ScaleMedia | We Scale Brands with Social Media</title>
+    <meta name="description" content="ScaleMedia is a leading Social Media Marketing Agency helping businesses grow through content, ads and strategy.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #0f172a; /* Dark blue/slate - trustworthy */
+            --secondary: #3b82f6; /* Bright blue */
+            --secondary-hover: #2563eb;
+            --accent: #10b981; /* Green for growth/success */
+            --bg-light: #f8fafc;
+            --bg-white: #ffffff;
+            --text-dark: #1e293b;
+            --text-gray: #64748b;
+            --border: #e2e8f0;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
+            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1);
+            --shadow-xl: 0 20px 25px -5px rgba(0,0,0,0.1);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            background-color: var(--bg-light);
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--primary);
+            line-height: 1.2;
+            font-weight: 700;
+        }
+
+        h1 { font-size: clamp(2.5rem, 5vw, 4rem); }
+        h2 { font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 1rem; }
+        h3 { font-size: 1.5rem; margin-bottom: 0.5rem; }
+
+        p { color: var(--text-gray); margin-bottom: 1rem; }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        .section-header p {
+            max-width: 600px;
+            margin: 0 auto;
+            font-size: 1.125rem;
+        }
+
+        section {
+            padding: 6rem 0;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 0.875rem 1.75rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-align: center;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background-color: var(--secondary);
+            color: white;
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--secondary-hover);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+            color: white;
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Navbar */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: transparent;
+            transition: var(--transition);
+            padding: 1.5rem 0;
+        }
+
+        header.sticky {
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo i {
+            color: var(--secondary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            color: var(--text-dark);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--secondary);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            color: var(--primary);
+            cursor: pointer;
+            border: none;
+            background: none;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            padding-top: 5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(59,130,246,0.1) 0%, rgba(255,255,255,0) 70%);
+            z-index: 0;
+        }
+
+        .hero-content {
+            flex: 1;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            margin-bottom: 1.5rem;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 2.5rem;
+            max-width: 600px;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 1rem;
+        }
+
+        /* About Section */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-image {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow-xl);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .about-content h2 {
+            margin-bottom: 1.5rem;
+        }
+
+        .highlights {
+            margin-top: 2rem;
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .highlight-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .highlight-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(59,130,246,0.1);
+            color: var(--secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            flex-shrink: 0;
+        }
+
+        /* Services Section */
+        .services {
+            background-color: var(--bg-white);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--bg-light);
+            padding: 2.5rem 2rem;
+            border-radius: 16px;
+            transition: var(--transition);
+            border: 1px solid var(--border);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 0;
+            background: var(--secondary);
+            transition: var(--transition);
+            z-index: -1;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-xl);
+            border-color: transparent;
+        }
+
+        .service-card:hover::before {
+            height: 100%;
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 1.5rem;
+            transition: var(--transition);
+        }
+
+        .service-card:hover .service-icon,
+        .service-card:hover h3,
+        .service-card:hover p {
+            color: white;
+        }
+
+        /* Portfolio Section */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .portfolio-card {
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            background: var(--bg-white);
+            transition: var(--transition);
+        }
+
+        .portfolio-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .portfolio-img {
+            width: 100%;
+            height: 250px;
+            background-color: #cbd5e1;
+            position: relative;
+        }
+        
+        .portfolio-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .portfolio-content {
+            padding: 1.5rem;
+        }
+
+        .portfolio-tag {
+            font-size: 0.875rem;
+            color: var(--secondary);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            display: inline-block;
+        }
+
+        /* Testimonial Section */
+        .testimonials {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .testimonials .section-header h2,
+        .testimonials .section-header p {
+            color: white;
+        }
+
+        .testimonials .section-header p {
+            color: #94a3b8;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background: rgba(255,255,255,0.05);
+            padding: 2.5rem;
+            border-radius: 16px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .stars {
+            color: #fbbf24;
+            margin-bottom: 1rem;
+        }
+
+        .quote {
+            font-size: 1.125rem;
+            font-style: italic;
+            margin-bottom: 2rem;
+            color: #e2e8f0;
+        }
+
+        .client-info {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .client-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: var(--secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.25rem;
+        }
+
+        .client-details h4 {
+            color: white;
+            margin: 0;
+            font-size: 1rem;
+        }
+
+        .client-details span {
+            color: #94a3b8;
+            font-size: 0.875rem;
+        }
+
+        /* Pricing Section */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .pricing-card {
+            background: var(--bg-white);
+            padding: 3rem 2rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border);
+            transition: var(--transition);
+            text-align: center;
+            position: relative;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .pricing-card.featured {
+            background: var(--primary);
+            color: white;
+            transform: scale(1.05);
+        }
+
+        .pricing-card.featured:hover {
+            transform: scale(1.05) translateY(-10px);
+        }
+
+        .pricing-card.featured h3,
+        .pricing-card.featured .price {
+            color: white;
+        }
+
+        .popular-badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--secondary);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+
+        .pricing-card h3 {
+            margin-bottom: 1rem;
+        }
+
+        .price {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 2rem;
+        }
+
+        .pricing-features {
+            text-align: left;
+            margin-bottom: 2rem;
+        }
+
+        .pricing-features li {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .pricing-features li i {
+            color: var(--accent);
+        }
+
+        /* Contact Section */
+        .contact {
+            background: var(--bg-white);
+        }
+        
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .contact-info h2 {
+            margin-bottom: 1rem;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .info-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(59,130,246,0.1);
+            color: var(--secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+        }
+
+        .contact-form {
+            background: var(--bg-light);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--secondary);
+            box-shadow: 0 0 0 3px rgba(59,130,246,0.2);
+        }
+
+        textarea.form-control {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        /* CTA Section */
+        .cta {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            text-align: center;
+            padding: 5rem 0;
+        }
+
+        .cta h2 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+        
+        .cta p {
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 2rem;
+            font-size: 1.25rem;
+        }
+
+        /* Footer */
+        footer {
+            background: #0f172a;
+            color: #94a3b8;
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-about .logo {
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .footer-social a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            transition: var(--transition);
+        }
+
+        .footer-social a:hover {
+            background: var(--secondary);
+            transform: translateY(-3px);
+        }
+
+        .footer-links h4 {
+            color: white;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-links a {
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        /* Floating WhatsApp Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background-color: #25d366;
+            color: white;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: var(--shadow-lg);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            color: white;
+            box-shadow: 0 15px 25px -5px rgba(37, 211, 102, 0.4);
+        }
+
+        /* Animations */
+        .animate-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .animate-up.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+            .pricing-card.featured {
+                transform: scale(1);
+            }
+            .pricing-card.featured:hover {
+                transform: translateY(-10px);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 250px;
+                height: 100vh;
+                background: white;
+                flex-direction: column;
+                padding: 6rem 2rem;
+                box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+                transition: var(--transition);
+            }
+
+            .nav-links.active {
+                right: 0;
+            }
+
+            .nav-links li {
+                width: 100%;
+                text-align: center;
+            }
+
+            .nav-links .btn {
+                width: 100%;
+                margin-top: 1rem;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+                z-index: 1001;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero-btns {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header / Navbar -->
+    <header id="header">
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <i class="fa-solid fa-chart-line"></i>
+                ScaleMedia
+            </a>
+            <button class="mobile-menu-btn" id="mobile-menu-btn">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#contact" class="btn btn-primary">Get Free Consultation</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content animate-up">
+                <h1>We Scale Brands with Social Media</h1>
+                <p>Helping businesses grow through content, ads, and strategy. We turn your social media into a lead-generating machine.</p>
+                <div class="hero-btns">
+                    <a href="#contact" class="btn btn-primary">Get Free Consultation</a>
+                    <a href="#services" class="btn btn-outline">View Services</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container about-grid">
+            <div class="about-image animate-up">
+                <!-- Using a placeholder image for agency team/office -->
+                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="ScaleMedia Team">
+            </div>
+            <div class="about-content animate-up">
+                <h2>Who is ScaleMedia?</h2>
+                <p>ScaleMedia is a premier Social Media Marketing Agency based in India, serving clients worldwide. We specialize in transforming digital presence into tangible business growth.</p>
+                <p>We don't just post content; we build communities and drive conversions. Our strategies are tailored to your unique brand voice and business objectives.</p>
+                
+                <div class="highlights">
+                    <div class="highlight-item">
+                        <div class="highlight-icon">
+                            <i class="fa-solid fa-chart-pie"></i>
+                        </div>
+                        <div>
+                            <h3>Data Driven Strategy</h3>
+                            <p>Every decision we make is backed by analytics and market research to ensure maximum ROI.</p>
+                        </div>
+                    </div>
+                    <div class="highlight-item">
+                        <div class="highlight-icon">
+                            <i class="fa-solid fa-rocket"></i>
+                        </div>
+                        <div>
+                            <h3>Fast Growth</h3>
+                            <p>Accelerate your brand's reach with our proven organic and paid growth frameworks.</p>
+                        </div>
+                    </div>
+                    <div class="highlight-item">
+                        <div class="highlight-icon">
+                            <i class="fa-solid fa-handshake"></i>
+                        </div>
+                        <div>
+                            <h3>Affordable Pricing</h3>
+                            <p>Premium agency services scaled to fit local businesses and international startups alike.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header animate-up">
+                <h2>Our Services</h2>
+                <p>Comprehensive social media solutions designed to scale your brand and generate high-quality leads.</p>
+            </div>
+            
+            <div class="services-grid">
+                <!-- 1 -->
+                <div class="service-card animate-up">
+                    <i class="fa-solid fa-mobile-screen service-icon"></i>
+                    <h3>Social Media Management</h3>
+                    <p>End-to-end management of your social profiles to build brand awareness.</p>
+                </div>
+                <!-- 2 -->
+                <div class="service-card animate-up">
+                    <i class="fa-solid fa-pen-nib service-icon"></i>
+                    <h3>Content Creation</h3>
+                    <p>Engaging, high-quality graphics and copywriting that tells your brand story.</p>
+                </div>
+                <!-- 3 -->
+                <div class="service-card animate-up">
+                    <i class="fa-brands fa-instagram service-icon"></i>
+                    <h3>Instagram Growth</h3>
+                    <p>Targeted strategies to increase your genuine followers and engagement rate.</p>
+                </div>
+                <!-- 4 -->
+                <div class="service-card animate-up">
+                    <i class="fa-solid fa-bullhorn service-icon"></i>
+                    <h3>Paid Ads (Meta & Google)</h3>
+                    <p>High-converting ad campaigns optimized for maximum return on ad spend.</p>
+                </div>
+                <!-- 5 -->
+                <div class="service-card animate-up">
+                    <i class="fa-solid fa-magnet service-icon"></i>
+                    <h3>Lead Generation</h3>
+                    <p>Funnels and strategies specifically designed to capture qualified prospects.</p>
+                </div>
+                <!-- 6 -->
+                <div class="service-card animate-up">
+                    <i class="fa-solid fa-palette service-icon"></i>
+                    <h3>Branding & Design</h3>
+                    <p>Cohesive visual identity that makes your business stand out from competitors.</p>
+                </div>
+                <!-- 7 -->
+                <div class="service-card animate-up">
+                    <i class="fa-solid fa-video service-icon"></i>
+                    <h3>Reel Creation</h3>
+                    <p>Trending, short-form video content to skyrocket your organic reach.</p>
+                </div>
+                <!-- 8 -->
+                <div class="service-card animate-up">
+                    <i class="fa-solid fa-user-tie service-icon"></i>
+                    <h3>Personal Brand Growth</h3>
+                    <p>Position yourself as an industry authority and thought leader.</p>
+                </div>
+                <!-- 9 -->
+                <div class="service-card animate-up">
+                    <i class="fa-brands fa-youtube service-icon"></i>
+                    <h3>YouTube Shorts Marketing</h3>
+                    <p>Tap into YouTube's massive short-form audience for rapid channel growth.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio">
+        <div class="container">
+            <div class="section-header animate-up">
+                <h2>Our Portfolio</h2>
+                <p>Take a look at how we've helped businesses transform their digital presence and scale their revenue.</p>
+            </div>
+            
+            <div class="portfolio-grid">
+                <!-- Project 1 -->
+                <div class="portfolio-card animate-up">
+                    <div class="portfolio-img">
+                        <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Instagram Growth">
+                    </div>
+                    <div class="portfolio-content">
+                        <span class="portfolio-tag">Instagram Growth</span>
+                        <h3>Lifestyle Brand Scaling</h3>
+                        <p>Grew account from 2k to 50k followers in 6 months using viral Reel strategies.</p>
+                    </div>
+                </div>
+                <!-- Project 2 -->
+                <div class="portfolio-card animate-up">
+                    <div class="portfolio-img">
+                        <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Real Estate Marketing">
+                    </div>
+                    <div class="portfolio-content">
+                        <span class="portfolio-tag">Real Estate Marketing</span>
+                        <h3>Luxury Properties Repo</h3>
+                        <p>Generated 150+ highly qualified leads for luxury apartments via Meta Ads.</p>
+                    </div>
+                </div>
+                <!-- Project 3 -->
+                <div class="portfolio-card animate-up">
+                    <div class="portfolio-img">
+                        <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Personal Brand Growth">
+                    </div>
+                    <div class="portfolio-content">
+                        <span class="portfolio-tag">Personal Brand Growth</span>
+                        <h3>CEO Thought Leadership</h3>
+                        <p>Positioned startup founder as an industry expert, resulting in 3 major speaking gigs.</p>
+                    </div>
+                </div>
+                <!-- Project 4 -->
+                <div class="portfolio-card animate-up">
+                    <div class="portfolio-img">
+                        <img src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Local Business Marketing">
+                    </div>
+                    <div class="portfolio-content">
+                        <span class="portfolio-tag">Local Business Marketing</span>
+                        <h3>Downtown Cafe Launch</h3>
+                        <p>Drove 500+ foot traffic visitors on opening weekend through local targeted campaigns.</p>
+                    </div>
+                </div>
+                <!-- Project 5 -->
+                <div class="portfolio-card animate-up">
+                    <div class="portfolio-img">
+                        <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="E-commerce Growth">
+                    </div>
+                    <div class="portfolio-content">
+                        <span class="portfolio-tag">E-commerce Growth</span>
+                        <h3>Fashion Boutique Sales</h3>
+                        <p>Achieved a 4.5x ROAS (Return on Ad Spend) through optimized conversion funnels.</p>
+                    </div>
+                </div>
+                <!-- Project 6 -->
+                <div class="portfolio-card animate-up">
+                    <div class="portfolio-img">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Lead Generation Campaign">
+                    </div>
+                    <div class="portfolio-content">
+                        <span class="portfolio-tag">Lead Generation Campaign</span>
+                        <h3>B2B Software Agency</h3>
+                        <p>Captured 200+ demo bookings via LinkedIn and Google Ads integration.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <div class="section-header animate-up">
+                <h2>Client Success Stories</h2>
+                <p>Don't just take our word for it. Here's what our partners have to say about working with ScaleMedia.</p>
+            </div>
+
+            <div class="testimonial-grid">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card animate-up">
+                    <div class="stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="quote">"ScaleMedia completely transformed our local clinic's online presence. We are now booked out 3 weeks in advance thanks to their lead generation strategies."</p>
+                    <div class="client-info">
+                        <div class="client-avatar">A</div>
+                        <div class="client-details">
+                            <h4>Dr. Amit Sharma</h4>
+                            <span>Local Clinic Owner</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card animate-up">
+                    <div class="stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="quote">"Working with an agency halfway across the world felt risky, but the communication and results have been flawless. Our ROAS has never been higher."</p>
+                    <div class="client-info">
+                        <div class="client-avatar">S</div>
+                        <div class="client-details">
+                            <h4>Sarah Jenkins</h4>
+                            <span>E-commerce Director, UK</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card animate-up">
+                    <div class="stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="quote">"As a tech startup, we needed fast growth. ScaleMedia delivered a solid content and ad strategy that helped us close our seed funding round with confidence."</p>
+                    <div class="client-info">
+                        <div class="client-avatar">R</div>
+                        <div class="client-details">
+                            <h4>Rahul Desai</h4>
+                            <span>SaaS Startup Founder</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing">
+        <div class="container">
+            <div class="section-header animate-up">
+                <h2>Transparent Pricing</h2>
+                <p>Invest in your growth. Choose a plan that fits your business goals and budget.</p>
+            </div>
+
+            <div class="pricing-grid">
+                <!-- Starter -->
+                <div class="pricing-card animate-up">
+                    <h3>Starter Plan</h3>
+                    <div class="price">Custom</div>
+                    <ul class="pricing-features">
+                        <li><i class="fa-solid fa-check"></i> Social Media Management</li>
+                        <li><i class="fa-solid fa-check"></i> 12 High-Quality Posts</li>
+                        <li><i class="fa-solid fa-check"></i> Basic Support</li>
+                        <li><i class="fa-solid fa-check"></i> Monthly Analytics Report</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-outline" style="width: 100%;">Get Started</a>
+                </div>
+                <!-- Growth -->
+                <div class="pricing-card featured animate-up">
+                    <div class="popular-badge">Most Popular</div>
+                    <h3>Growth Plan</h3>
+                    <div class="price">Custom</div>
+                    <ul class="pricing-features">
+                        <li><i class="fa-solid fa-check"></i> 20 High-Quality Posts</li>
+                        <li><i class="fa-solid fa-check"></i> Comprehensive Ads Strategy</li>
+                        <li><i class="fa-solid fa-check"></i> 4 Custom Reel Contents</li>
+                        <li><i class="fa-solid fa-check"></i> Priority Support</li>
+                        <li><i class="fa-solid fa-check"></i> Community Management</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-primary" style="width: 100%; background: white; color: var(--primary);">Get Started</a>
+                </div>
+                <!-- Premium -->
+                <div class="pricing-card animate-up">
+                    <h3>Premium Plan</h3>
+                    <div class="price">Custom</div>
+                    <ul class="pricing-features">
+                        <li><i class="fa-solid fa-check"></i> Full Account Management</li>
+                        <li><i class="fa-solid fa-check"></i> Advanced Ads + Content</li>
+                        <li><i class="fa-solid fa-check"></i> Custom Lead Generation Funnel</li>
+                        <li><i class="fa-solid fa-check"></i> 8 Custom Reel Contents</li>
+                        <li><i class="fa-solid fa-check"></i> 24/7 Dedicated Support</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-outline" style="width: 100%;">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-container">
+                <div class="contact-info animate-up">
+                    <h2>Let's Scale Your Business Together</h2>
+                    <p>Ready to dominate your market? Fill out the form or reach out directly to schedule your free consultation.</p>
+                    
+                    <div style="margin-top: 3rem;">
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4>Email Us</h4>
+                                <p>contact@scalemedia.agency</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fa-brands fa-whatsapp"></i>
+                            </div>
+                            <div>
+                                <h4>WhatsApp</h4>
+                                <p>+91 00000 00000</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h4>Location</h4>
+                                <p>India (Serving Worldwide)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form animate-up">
+                    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" id="leadForm">
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" name="name" class="form-control" required placeholder="John Doe">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" class="form-control" required placeholder="john@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" class="form-control" required placeholder="+1 234 567 8900">
+                        </div>
+                        <div class="form-group">
+                            <label for="business">Business Name</label>
+                            <input type="text" id="business" name="business" class="form-control" placeholder="Your Company Ltd.">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">How can we help you?</label>
+                            <textarea id="message" name="message" class="form-control" placeholder="Tell us about your goals..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Inquiry</button>
+                        <p id="form-status" style="margin-top: 1rem; text-align: center; display: none; color: var(--accent); font-weight: 600;">
+                            Thank you! ScaleMedia will contact you soon.
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container animate-up">
+            <h2>Ready to Scale Your Business?</h2>
+            <p>Stop leaving money on the table. Let's build a digital presence that converts.</p>
+            <a href="#contact" class="btn btn-primary" style="background: white; color: var(--primary); box-shadow: 0 10px 25px rgba(0,0,0,0.2);">Book Free Call</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <a href="#" class="logo">
+                        <i class="fa-solid fa-chart-line"></i>
+                        ScaleMedia
+                    </a>
+                    <p>We Scale Brands with Social Media. Elevating local businesses and international clients through strategic content and ads.</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#pricing">Pricing</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#services">Social Media Management</a></li>
+                        <li><a href="#services">Content Creation</a></li>
+                        <li><a href="#services">Paid Ads</a></li>
+                        <li><a href="#services">Lead Generation</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li>India (Serving Worldwide)</li>
+                        <li>contact@scalemedia.agency</li>
+                        <li>+91 00000 00000</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> ScaleMedia. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/YOUR_NUMBER" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- Scripts -->
+    <script>
+        // Set current year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Sticky Navbar
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('sticky');
+            } else {
+                header.classList.remove('sticky');
+            }
+        });
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const navLinks = document.getElementById('nav-links');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            // Change icon
+            const icon = mobileMenuBtn.querySelector('i');
+            if (navLinks.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-xmark');
+            } else {
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+        // Close mobile menu when link is clicked
+        const navItems = document.querySelectorAll('.nav-links a');
+        navItems.forEach(item => {
+            item.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                const icon = mobileMenuBtn.querySelector('i');
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+            });
+        });
+
+        // Scroll Animations using Intersection Observer
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                    // Optional: stop observing once animated
+                    // observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        const animatedElements = document.querySelectorAll('.animate-up');
+        animatedElements.forEach(el => observer.observe(el));
+
+        // Formspree Handling (Basic UX enhancement without preventing default redirect unless using ajax)
+        const form = document.getElementById('leadForm');
+        const formStatus = document.getElementById('form-status');
+        
+        form.addEventListener("submit", async function(event) {
+            // Check if user changed the YOUR_FORM_ID
+            const actionUrl = form.getAttribute('action');
+            if(actionUrl.includes('YOUR_FORM_ID')) {
+                event.preventDefault();
+                alert("Please replace 'YOUR_FORM_ID' in the HTML with your actual Formspree endpoint to receive messages.");
+                return;
+            }
+
+            // Optional: You can handle the form submission via AJAX here if desired,
+            // But Formspree's default behavior handles redirect.
+            // If using AJAX:
+            event.preventDefault();
+            const data = new FormData(event.target);
+            fetch(event.target.action, {
+                method: form.method,
+                body: data,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            }).then(response => {
+                if (response.ok) {
+                    formStatus.style.display = "block";
+                    formStatus.textContent = "Thank you! ScaleMedia will contact you soon.";
+                    form.reset();
+                } else {
+                    response.json().then(data => {
+                        if (Object.hasOwn(data, 'errors')) {
+                            formStatus.style.display = "block";
+                            formStatus.style.color = "red";
+                            formStatus.textContent = data["errors"].map(error => error["message"]).join(", ");
+                        } else {
+                            formStatus.style.display = "block";
+                            formStatus.style.color = "red";
+                            formStatus.textContent = "Oops! There was a problem submitting your form";
+                        }
+                    })
+                }
+            }).catch(error => {
+                formStatus.style.display = "block";
+                formStatus.style.color = "red";
+                formStatus.textContent = "Oops! There was a problem submitting your form";
+            });
+        });
+    </script>
+</body>
+</html>
